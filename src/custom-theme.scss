@@ -1,0 +1,94 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// define a real custom palette (using http://mcg.mbitson.com)
+$AngularUI-brand: (
+    50 : #e1f5f5,
+    100 : #b3e6e6,
+    200 : #81d5d6,
+    300 : #4fc4c6,
+    400 : #29b7b9,
+    500 : #03aaad,
+    600 : #03a3a6,
+    700 : #02999c,
+    800 : #029093,
+    900 : #017f83,
+    A100 : #b0fcff,
+    A200 : #7dfbff,
+    A400 : #4af9ff,
+    A700 : #30f8ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$AngularUI-gray: (
+    50: #ffffff,
+    100: #fff7f4,
+    200: #fecdbd,
+    300: #fc9977,
+    400: #fc8259,
+    500: #fb6c3b,
+    600: #fa551d,
+    700: #f44205,
+    800: #d63a04,
+    900: #b83204,
+    A100: #ffffff,
+    A200: #fff7f4,
+    A400: #fc8259,
+    A700: #f44205,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: white,
+    )
+);
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$AngularUI-primary: mat-palette($AngularUI-brand);
+$AngularUI-accent: mat-palette($AngularUI-gray);
+
+// The warn palette is optional (defaults to red).
+$AngularUI-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$AngularUI-theme: mat-light-theme($AngularUI-primary, $AngularUI-accent, $AngularUI-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($AngularUI-theme);
+
